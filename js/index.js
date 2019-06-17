@@ -44,11 +44,12 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 // #### NAV BAR ####
 let nav = document.querySelectorAll('a');
 nav.forEach((el, index) => {
-  console.log(index);
+  console.log(siteContent['nav'][`nav-item-${index + 1}`]);
   return el.textContent = siteContent['nav'][`nav-item-${index + 1}`];
 });
+nav.forEach(el => el.style.color = 'green');
 
-// #### TOP CONTENT: CTA ####
+// #### CTA ####
 let ctaH1 = document.querySelector('h1');
 ctaH1.textContent = siteContent['cta']['h1'];
 console.log(ctaH1);
@@ -59,3 +60,35 @@ circleImg.setAttribute('src', siteContent['cta']['img-src']);
 let btn = document.getElementsByTagName('button')[0];
 console.log(btn);
 btn.textContent = siteContent['cta']['button'];
+
+// #### MAIN CONTENT ####
+
+// Top content
+let topContentH4 = Array.from(document.querySelectorAll('.main-content .top-content h4'));
+topContentH4[0].textContent = siteContent['main-content']['features-h4']
+topContentH4[1].textContent = siteContent['main-content']['about-h4']
+let topContentP = Array.from(document.querySelectorAll('.main-content .top-content p'));
+topContentP[0].textContent = siteContent['main-content']['features-content'];
+topContentP[1].textContent = siteContent['main-content']['about-content'];
+
+// Middle Img
+let middleImg = document.getElementById('middle-img');
+middleImg.src = 'img/mid-page-accent.jpg';
+
+// Bottom content
+let bottomContentH4 = Array.from(document.querySelectorAll('.main-content .bottom-content .text-content h4'));
+bottomContentH4[0].textContent = siteContent['main-content']['services-h4']
+bottomContentH4[1].textContent = siteContent['main-content']['product-h4']
+bottomContentH4[2].textContent = siteContent['main-content']['vision-h4']
+let bottomContentP = Array.from(document.querySelectorAll('.main-content .bottom-content .text-content p'));
+bottomContentP[0].textContent = siteContent['main-content']['services-content'];
+bottomContentP[1].textContent = siteContent['main-content']['product-content'];
+bottomContentP[2].textContent = siteContent['main-content']['vision-content'];
+
+
+
+
+
+
+
+
