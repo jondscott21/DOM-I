@@ -79,3 +79,31 @@ middleHeaders[4].textContent = siteContent['main-content']['vision-h4'];
 middleParagraphs[2].textContent = siteContent['main-content']['services-content'];
 middleParagraphs[3].textContent = siteContent['main-content']['product-content'];
 middleParagraphs[4].textContent = siteContent['main-content']['vision-content'];
+
+// Contact info
+const contact = document.querySelector('.contact');
+const contactInfo = Array.from(document.querySelectorAll('.contact *'));
+contactInfo[0].textContent = siteContent['contact']['contact-h4']
+contactInfo[1].textContent = siteContent['contact']['address']
+contact.style.width = '20%'; 
+contactInfo[2].textContent = siteContent['contact']['phone']
+contactInfo[3].textContent = siteContent['contact']['email']
+
+// Copyright
+
+const copyrightElem = document.querySelector('footer > p')
+copyrightElem.textContent = siteContent['footer']['copyright'];
+
+// contactInfo.forEach(el => {
+//     // console.log(el.textContent)
+//     if (el.textContent.length === 0){
+//         console.log('hi')
+//         Object.entries(siteContent['contact']).map(([key, value]) => el.textContent = value)
+//     }
+// });
+
+// // Object.entries(siteContent['contact']).forEach(([key, value]) => {
+//     // contactInfo.map(el => el.textContent += value);
+// // })
+
+// console.log(Object.entries(siteContent['contact']))
