@@ -39,20 +39,43 @@ const siteContent = {
   
   // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 
 // Nav Bar
-const navBar = document.querySelectorAll('nav a');
-navBar.forEach((el, index) => {return el.textContent = `${siteContent['nav'][`nav-item-${index+1}`]}`})
+const navBar = Array.from(document.querySelectorAll('nav a'));
+navBar.map((el, index) => el.textContent = `${siteContent['nav'][`nav-item-${index+1}`]}`);
 
 // CTA
 
-const ctaTag = document.querySelector('.cta-text > h1')
+const ctaTag = document.querySelector('.cta-text > h1');
 ctaTag.textContent = siteContent['cta']['h1'];
 
-const startedButton = document.querySelector('.cta-text > button')
+const startedButton = document.querySelector('.cta-text > button');
 startedButton.textContent = siteContent['cta']['button'];
 
-const ctaImg = document.getElementById('cta-img')
-ctaImg.setAttribute('src', siteContent['cta']['img-src'])
+const ctaImg = document.getElementById('cta-img');
+ctaImg.setAttribute('src', siteContent['cta']['img-src']);
+
+// Main Content
+
+// Top paragraphs
+const middleHeaders = Array.from(document.querySelectorAll('.text-content > h4'));
+const middleParagraphs = Array.from(document.querySelectorAll('.text-content > p'));
+
+middleHeaders[0].textContent = siteContent['main-content']['features-h4'];
+middleHeaders[1].textContent = siteContent['main-content']['about-h4'];
+middleParagraphs[0].textContent = siteContent['main-content']['features-content'];
+middleParagraphs[1].textContent = siteContent['main-content']['about-content'];
+
+// Middle image
+const middleImg = document.getElementById('middle-img');
+middleImg.setAttribute('src', siteContent['main-content']["middle-img-src"])
+
+// Bottom paragraphs
+middleHeaders[2].textContent = siteContent['main-content']['services-h4'];
+middleHeaders[3].textContent = siteContent['main-content']['product-h4'];
+middleHeaders[4].textContent = siteContent['main-content']['vision-h4'];
+middleParagraphs[2].textContent = siteContent['main-content']['services-content'];
+middleParagraphs[3].textContent = siteContent['main-content']['product-content'];
+middleParagraphs[4].textContent = siteContent['main-content']['vision-content'];
