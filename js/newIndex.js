@@ -111,6 +111,18 @@ contactInfo[3].textContent = siteContent['contact']['email']
 const copyrightElem = document.querySelector('footer > p')
 copyrightElem.textContent = siteContent['footer']['copyright'];
 
+
+// Click event 
+const container = document.querySelector('.container');
+
+startedButton.addEventListener('click', () => {
+  if(document.body.style.background === '') {
+    document.body.style.background = 'antiquewhite';
+  } else {
+    document.body.style.background = '';
+  }
+  })
+
 // contactInfo.forEach(el => {
 //     // console.log(el.textContent)
 //     if (el.textContent.length === 0){
