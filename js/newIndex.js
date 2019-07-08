@@ -42,11 +42,24 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 
-// Nav Bar
-const navBar = Array.from(document.querySelectorAll('nav a'));
-navBar.map((el, index) => el.textContent = `${siteContent['nav'][`nav-item-${index+1}`]}`);
+// ### Nav Bar ###
+const navAnchors = Array.from(document.querySelectorAll('nav a'));
+navAnchors.map((el, index) => el.textContent = `${siteContent['nav'][`nav-item-${index+1}`]}`);
 
-// CTA
+// Adding color to nav bar
+
+navAnchors.map(el => el.style.color = 'green');
+
+// Adding elements to nav bar
+const navBar = document.querySelector('nav');
+const firstAnchor = document.createElement('a');
+firstAnchor.textContent = `First`;
+const lastAnchor = document.createElement('a');
+lastAnchor.textContent = 'Last';
+navBar.prepend(firstAnchor);
+navBar.append(lastAnchor);
+
+// ### CTA ###
 
 const ctaTag = document.querySelector('.cta-text > h1');
 ctaTag.textContent = siteContent['cta']['h1'];
@@ -57,7 +70,7 @@ startedButton.textContent = siteContent['cta']['button'];
 const ctaImg = document.getElementById('cta-img');
 ctaImg.setAttribute('src', siteContent['cta']['img-src']);
 
-// Main Content
+// ### Main Content ###
 
 // Top paragraphs
 const middleHeaders = Array.from(document.querySelectorAll('.text-content > h4'));
@@ -80,16 +93,20 @@ middleParagraphs[2].textContent = siteContent['main-content']['services-content'
 middleParagraphs[3].textContent = siteContent['main-content']['product-content'];
 middleParagraphs[4].textContent = siteContent['main-content']['vision-content'];
 
-// Contact info
+// ### Contact info ###
+
+// Adjusting width of contact box
 const contact = document.querySelector('.contact');
+contact.style.width = '20%'; 
+
+// Adding contact elements
 const contactInfo = Array.from(document.querySelectorAll('.contact *'));
 contactInfo[0].textContent = siteContent['contact']['contact-h4']
 contactInfo[1].textContent = siteContent['contact']['address']
-contact.style.width = '20%'; 
 contactInfo[2].textContent = siteContent['contact']['phone']
 contactInfo[3].textContent = siteContent['contact']['email']
 
-// Copyright
+// ### Copyright ###
 
 const copyrightElem = document.querySelector('footer > p')
 copyrightElem.textContent = siteContent['footer']['copyright'];
